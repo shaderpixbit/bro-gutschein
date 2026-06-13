@@ -485,6 +485,9 @@
             // Flip per Tap/Klick – aber nicht, wenn man gerade in ein Feld schreibt
             card.addEventListener("click", (e) => {
                 if (e.target.isContentEditable) return;
+                // Inline-Transform vom Maus-Tilt entfernen, damit .flipped greifen kann
+                card.style.transition = "";
+                card.style.transform = "";
                 card.classList.toggle("flipped");
             });
 
